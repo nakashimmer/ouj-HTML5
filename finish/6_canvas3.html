@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>canvas transform</title>
+</head>
+<body>
+	<canvas id="mycanvas" width=200 height=400>
+		canvasに対応していません
+	</canvas>
+
+	<script>
+		var canvas = document.getElementById('mycanvas');
+		var c = canvas.getContext('2d');
+		
+		//変形した矩形の描画
+		c.save();
+		c.translate(100,100);
+		c.rotate(30/180*Math.PI);
+		c.scale(1,0.5);
+		c.fillStyle="blue";
+		c.fillRect(-50,-50,100,100);
+		c.restore();
+		//ここまで
+
+	</script>
+</body>
+</html>

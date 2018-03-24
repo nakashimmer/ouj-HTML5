@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<meta charset="utf-8">
+	<title>お絵かきソフト</title>
+</head>
+<body>
+<section>
+	<p id="info">座標</p>
+	<canvas id="mycanvas" width="310" height="320">
+	</canvas>
+</section>
+<script>
+	var canvas=document.getElementById("mycanvas");
+	var c=canvas.getContext("2d");
+	var pos={x:150,y:150};
+	//ここにイベントリスナ等を記述します
+	
+//	var drawable="no";
+
+	canvas.addEventListener("mousemove",function(e){
+//		var rect = e.target.getBoundingClientRect();
+//		pos.x = e.clientX - rect.left;
+//		pos.y = e.clientY - rect.top;
+	
+		c.fillStyle="red";
+		if(drawable){c.fillRect(finger.x-2,finger.y-2,4,4);}
+	
+		document.getElementById("info").innerHTML  	= pos.x+ "/" +pos.y;
+	});
+	
+	
+	canvas.addEventListener("mousedown",function(e){
+//		drawable=true;
+	});
+	
+	
+	canvas.addEventListener("mouseup",function(e){
+//		drawable=false;
+	});
+
+	
+</script>
+</body>
+</html>

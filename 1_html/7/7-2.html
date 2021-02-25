@@ -5,13 +5,14 @@
 		<title>7-2</title>
 		<meta name="description" content="初心者向けのオンラインHTML5講座です。">
 		<meta name="viewport" content="width=device-width">
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 		<style>
 		</style>
 	</head>
 	<body>
 		<h1>7.アプリケーション向けの要素</h1>
 		<section>
-			<h2>1.input要素とtype属性</h2>
+			<h2>2.input要素とtype属性</h2>
 			<p>お名前：<input type="text"></p>
 			<p>年月日：<input type="date"></p>
 			<p>時間：<input type="time"></p>
@@ -19,10 +20,19 @@
 			<p>レンジ：<input type="range"></p>
 			<p>色：<input type="color"></p>
 			<p>電話：<input type="tel"></p>
-		</section>
-		<section>
-			<h2>button要素</h2>
-			<p><button onclick="program1();">押す</button></p>
+			<p>検索：<input type="search"></p>
+			<p>URL：<input type="url"></p>
+			<p>電子メール：<input type="email"></p>
+			<p>サイズ；
+				<label><input type="radio" value="S" name="size">S</label>
+				<label><input type="radio" value="M" name="size">M</label>
+				<label><input type="radio" value="L" name="size">L</label>
+			</p>
+			<p>好きな動物は？；
+				<label><input type="checkbox" value="dog" name="animal">犬が好き</label>
+				<label><input type="checkbox" value="cat" name="animal">猫が好き</label>
+				<label><input type="checkbox" value="fox" name="animal">狐が好き</label>
+			</p>
 		</section>
 	</body>
 </html>

@@ -2,25 +2,25 @@
 <html>
 	<head>
 		<meta charset=utf-8>
-		<title>放送大学「HTML5入門」</title>
+		<title>🕊 放送大学 HTML5入門 授業ページ</title>
 		<meta name=viewport content="width=device-width">
 		<link rel="stylesheet" href="style.css">
 		<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
-
 		<style>
+			/*全体的なスタイル*/
 			* {
 				margin: 0;
 				padding: 0px;
 				line-height: 2em;
 				font-size: 20px;
 				font-family: "M PLUS Rounded 1c";
-				
 			}
 
-			body{
-				background-color: black;
-				color:white;
+			body {
+				background-color: #333;
+				color: white;
 			}
+
 			#wrap {
 				width: 800px;
 				margin: 0 auto;
@@ -28,8 +28,8 @@
 
 			header,
 			footer {
-				background-color: #999;
-				color: black;
+				background-color: black;
+				color: white;
 				text-align: center;
 				line-height: 50px;
 				height: 40px;
@@ -43,9 +43,10 @@
 			}
 
 			section {
-				margin: 1em;
+				margin: 2em;
 			}
 
+			/*横並べ*/
 			.flex {
 				display: flex;
 			}
@@ -55,13 +56,25 @@
 				border: 1px solid gray;
 			}
 
+			/*枠線の重なり調節*/
 			.flex>ul:nth-of-type(2) {
 				border-left: none;
 				border-right: none;
 			}
 
+			/*箇条書きスタイル(一般)*/
 			ul>li {
-				margin-left: 2em;
+				padding:0.3em;
+			}
+
+			/*箇条書きスタイル(○の部分)*/
+			ul {
+				list-style-type: none;
+			}
+
+	
+			li:before {
+				content: "🕊 ";
 			}
 
 			/*スクロールバーを非表示 (除Firefox)*/
@@ -73,15 +86,33 @@
 				-ms-overflow-style: none;
 			}
 
+			/*リンクのスタイル*/
 			a {
 				text-decoration: none;
 				border-bottom: 3px dotted pink;
-				color:#aaa;
-			}
-			a:visited{
-				color:white;
+				color: #aaa;
 			}
 
+			a:visited {
+				color: white;
+			}
+
+			/*マウスホバーで目立たせる*/
+			li{
+				transition: all 0.1s linear 0.1s;
+			}
+			li:hover {
+				transform: scale(1.1);
+				background-color: black;
+			}
+			li:hover {
+					padding-left:1.7em;
+			}
+			section:nth-of-type(2) li:hover  {
+					padding-left:0.7em;
+			}
+
+			/*セクション番号*/
 			body {
 				counter-reset: number 0;
 			}
@@ -91,6 +122,7 @@
 				content: counter(number) ".  ";
 			}
 
+			/*レスポンシブ対応*/
 			@media(max-width:800px) {
 				main {
 					width: 100%;
@@ -103,56 +135,58 @@
 				}
 
 				.flex>ul:nth-of-type(2) {
-					border:1px solid gray;
+					border: 1px solid gray;
 					border-top: none;
 					border-bottom: none;
 				}
+				li:hover {
+					padding-left:1.1em;
+				}
+				section:nth-of-type(2) li:hover  {
+					padding-left:1.1em;
+			}
 			}
 		</style>
 	</head>
 	<body>
 		<header>
-			<h1>放送大学HTML5入門</h1>
+			<h1>🕊 放送大学 HTML5入門 授業ページ</h1>
 		</header>
 		<main>
 			<section>
 				<h2>演習用ファイル</h2>
 				<ul>
-					<li>演習用ファイル：<a
-							href="https://github.com/nakashimmer/oujHTML5/archive/master.zip">ここをクリックして</a>PCのデスクトップにダウンロード</li>
+					<li>演習用ファイル：<a href="https://github.com/nakashimmer/oujHTML5/archive/master.zip">ここをクリックして</a>PCのデスクトップにダウンロード
+					</li>
 				</ul>
 			</section>
 			<section>
 				<h2>HTML5サンプル</h2>
 				<div class="flex">
 					<ul>
-						<li>Dino:URL欄に以下入力<br>「chrome://dino」</li>
-						<li><a target="_blank" href="https://www.google.com/doodles/roswells-66th-anniversary">Google ロゴ</a></li>
-						<li><a target="_blank" href="http://info.cern.ch/hypertext/WWW/TheProject.html">世界で最初のHP</a></li>
-						<li><a target="_blank" href="https://www.ouj.ac.jp/">普通のHP(放送大学)</a></li>
-						<li><a target="_blank" href="https://eco-island.jp/">動画のサイト(宮古島)</a></li>
-						<li><a target="_blank" href="https://tokyomusicodyssey.jp/2018/">ロングスクロール</a></li>
+						<li>URL欄に以下入力<br>「chrome://dino」</li>
+						<li><a href="https://www.google.com/doodles/roswells-66th-anniversary">Google ロゴ</a></li>
+						<li><a href="http://info.cern.ch/hypertext/WWW/TheProject.html">世界で最初のHP</a></li>
+						<li><a href="https://www.ouj.ac.jp/">普通のHP(放送大学)</a></li>
+						<li><a href="https://eco-island.jp/">動画のサイト(宮古島)</a></li>
+						<li><a href="https://tokyomusicodyssey.jp/2018/">ロングスクロール</a></li>
 					</ul>
 					<ul>
-						<li><a target="_blank"
-								href="https://nakashimmer.github.io/teacherColumn2021/cssSim/index.html">CSSシミュレーション</a></li>
-						<li><a target="_blank"
-								href="https://nakashimmer.github.io/showcase/css3/animation/carousel/index.html">アニメーション</a></li>
-						<li><a target="_blank"
-								href="https://nakashimmer.github.io/showcase/css3/animation/3d/cube/index.html">3次元</a></li>
+						<li><a href="https://nakashimmer.github.io/teacherColumn2021/cssSim/index.html">CSSシミュレーション</a></li>
+						<li><a href="https://nakashimmer.github.io/showcase/css3/animation/carousel/index.html">アニメーション</a></li>
+						<li><a href="https://nakashimmer.github.io/showcase/css3/animation/3d/cube/index.html">3次元</a></li>
 					</ul>
 					<ul>
-						<li><a target="_blank" href="https://nakashimmer.github.io/showcase/JS/calculate/kesan/index.html">計算</a>
+						<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/kesan/index.html">計算</a>
 						</li>
-						<li><a target="_blank" href="https://nakashimmer.github.io/showcase/JS/calculate/bmi/index.html">BMI</a>
+						<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/bmi/index.html">BMI</a>
 						</li>
-						<li><a target="_blank" href="https://nakashimmer.github.io/showcase/JS/calculate/uranai/index.html">占い</a>
+						<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/uranai/index.html">占い</a>
 						</li>
-						<li><a target="_blank" href="https://nakashimmer.github.io/showcase/JS/calculate/janken/index.html">じゃんけん •
-								ゲーム</a></li>
-						<li><a target="_blank" href="https://nakashimmer.github.io/showcase/JS/dom/css/index3.html">CSSをコントロール</a>
+						<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/janken/index.html">じゃんけん • ゲーム</a></li>
+						<li><a href="https://nakashimmer.github.io/showcase/JS/dom/css/index3.html">CSSをコントロール</a>
 						</li>
-						<li><a target="_blank" href="https://nakashimmer.github.io/showcase/JS/deviceAccess/gps/index.html">GPS</a>
+						<li><a href="https://nakashimmer.github.io/showcase/JS/deviceAccess/gps/index.html">GPS</a>
 						</li>
 						<li><a
 								href="https://nakashimmer.github.io/showcase/JS/deviceAccess/speechSynthesis/recognition/index.html">音声認識</a>
@@ -163,12 +197,13 @@
 			<section>
 				<h2>参考URL</h2>
 				<ul>
-					<li><a target="_blank" href="https://youtu.be/k4-qKDWe67I">TeraPad</a></li>
-					<li><a target="_blank"
+					<li><a href="https://youtu.be/k4-qKDWe67I">TeraPad</a></li>
+					<li><a
 							href="https://www.cyber-u.ac.jp/cu_annex/teachercolumn/tccm_tec/html-for-beginners.html">初学者のためのHTML5</a>
 					</li>
-					<li><a target="_blank" href="https://note.com/_nakashimmer_/n/ncb49a09c8211">作ったHTML5がうまく動作しない時どうするか?</a></li>
-					<li><a target="_blank" href="https://note.com/_nakashimmer_/n/nd04763808d55">開発者ツール:JavaScriptのお助けツール</a></li>
+					<li><a href="https://note.com/_nakashimmer_/n/ncb49a09c8211">作ったHTML5がうまく動作しない時どうするか?</a></li>
+					<li><a href="https://note.com/_nakashimmer_/n/nd04763808d55">開発者ツール:JavaScriptのお助けツール</a></li>
+					<li><a href="https://webtechpromo.org/">HTML5検定</a></li>
 				</ul>
 			</section>
 		</main>

@@ -35,9 +35,11 @@
 				height: 40px;
 			}
 
-			main {
+			#outer {
 				height: calc(100vh - 80px);
 				overflow-y: scroll;
+			}
+			main{
 				width: 800px;
 				margin: 0 auto;
 			}
@@ -64,7 +66,7 @@
 
 			/*箇条書きスタイル(一般)*/
 			ul>li {
-				padding:0.3em;
+				padding: 0.3em;
 			}
 
 			/*箇条書きスタイル(○の部分)*/
@@ -72,7 +74,6 @@
 				list-style-type: none;
 			}
 
-	
 			li:before {
 				content: "🕊 ";
 			}
@@ -98,18 +99,21 @@
 			}
 
 			/*マウスホバーで目立たせる*/
-			li{
+			li {
 				transition: all 0.1s linear 0.1s;
 			}
+
 			li:hover {
 				transform: scale(1.1);
 				background-color: black;
 			}
+
 			li:hover {
-					padding-left:1.7em;
+				padding-left: 1.7em;
 			}
-			section:nth-of-type(2) li:hover  {
-					padding-left:0.7em;
+
+			section:nth-of-type(2) li:hover {
+				padding-left: 0.7em;
 			}
 
 			/*セクション番号*/
@@ -139,12 +143,14 @@
 					border-top: none;
 					border-bottom: none;
 				}
+
 				li:hover {
-					padding-left:1.1em;
+					padding-left: 1.1em;
 				}
-				section:nth-of-type(2) li:hover  {
-					padding-left:1.1em;
-			}
+
+				section:nth-of-type(2) li:hover {
+					padding-left: 1.1em;
+				}
 			}
 		</style>
 	</head>
@@ -152,61 +158,63 @@
 		<header>
 			<h1>🕊 放送大学 HTML5入門 授業ページ</h1>
 		</header>
-		<main>
-			<section>
-				<h2>演習用ファイル</h2>
-				<ul>
-					<li>演習用ファイル：<a href="https://github.com/nakashimmer/oujHTML5/archive/master.zip">ここをクリックして</a>PCのデスクトップにダウンロード
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h2>HTML5サンプル</h2>
-				<div class="flex">
+		<div id="outer">
+			<main>
+				<section>
+					<h2>演習用ファイル</h2>
 					<ul>
-						<li>URL欄に以下入力<br>「chrome://dino」</li>
-						<li><a href="https://www.google.com/doodles/roswells-66th-anniversary">Google ロゴ</a></li>
-						<li><a href="http://info.cern.ch/hypertext/WWW/TheProject.html">世界で最初のHP</a></li>
-						<li><a href="https://www.ouj.ac.jp/">普通のHP(放送大学)</a></li>
-						<li><a href="https://eco-island.jp/">動画のサイト(宮古島)</a></li>
-						<li><a href="https://tokyomusicodyssey.jp/2018/">ロングスクロール</a></li>
+						<li>演習用ファイル：<a
+								href="https://github.com/nakashimmer/oujHTML5/archive/master.zip">ここをクリックして</a>PCのデスクトップにダウンロード </li>
 					</ul>
+				</section>
+				<section>
+					<h2>HTML5サンプル</h2>
+					<div class="flex">
+						<ul>
+							<li>URL欄に以下入力<br>「chrome://dino」</li>
+							<li><a href="https://www.google.com/doodles/roswells-66th-anniversary">Google ロゴ</a></li>
+							<li><a href="http://info.cern.ch/hypertext/WWW/TheProject.html">世界で最初のHP</a></li>
+							<li><a href="https://www.ouj.ac.jp/">普通のHP(放送大学)</a></li>
+							<li><a href="https://eco-island.jp/">動画のサイト(宮古島)</a></li>
+							<li><a href="https://tokyomusicodyssey.jp/2018/">ロングスクロール</a></li>
+						</ul>
+						<ul>
+							<li><a href="https://nakashimmer.github.io/teacherColumn2021/cssSim/index.html">CSSシミュレーション</a></li>
+							<li><a href="https://nakashimmer.github.io/showcase/css3/animation/carousel/index.html">アニメーション</a></li>
+							<li><a href="https://nakashimmer.github.io/showcase/css3/animation/3d/cube/index.html">3次元</a></li>
+						</ul>
+						<ul>
+							<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/kesan/index.html">計算</a>
+							</li>
+							<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/bmi/index.html">BMI</a>
+							</li>
+							<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/uranai/index.html">占い</a>
+							</li>
+							<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/janken/index.html">じゃんけん • ゲーム</a></li>
+							<li><a href="https://nakashimmer.github.io/showcase/JS/dom/css/index3.html">CSSをコントロール</a>
+							</li>
+							<li><a href="https://nakashimmer.github.io/showcase/JS/deviceAccess/gps/index.html">GPS</a>
+							</li>
+							<li><a
+									href="https://nakashimmer.github.io/showcase/JS/deviceAccess/speechSynthesis/recognition/index.html">音声認識</a>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h2>参考URL</h2>
 					<ul>
-						<li><a href="https://nakashimmer.github.io/teacherColumn2021/cssSim/index.html">CSSシミュレーション</a></li>
-						<li><a href="https://nakashimmer.github.io/showcase/css3/animation/carousel/index.html">アニメーション</a></li>
-						<li><a href="https://nakashimmer.github.io/showcase/css3/animation/3d/cube/index.html">3次元</a></li>
-					</ul>
-					<ul>
-						<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/kesan/index.html">計算</a>
-						</li>
-						<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/bmi/index.html">BMI</a>
-						</li>
-						<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/uranai/index.html">占い</a>
-						</li>
-						<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/janken/index.html">じゃんけん • ゲーム</a></li>
-						<li><a href="https://nakashimmer.github.io/showcase/JS/dom/css/index3.html">CSSをコントロール</a>
-						</li>
-						<li><a href="https://nakashimmer.github.io/showcase/JS/deviceAccess/gps/index.html">GPS</a>
-						</li>
+						<li><a href="https://youtu.be/k4-qKDWe67I">TeraPad</a></li>
 						<li><a
-								href="https://nakashimmer.github.io/showcase/JS/deviceAccess/speechSynthesis/recognition/index.html">音声認識</a>
+								href="https://www.cyber-u.ac.jp/cu_annex/teachercolumn/tccm_tec/html-for-beginners.html">初学者のためのHTML5</a>
 						</li>
+						<li><a href="https://note.com/_nakashimmer_/n/ncb49a09c8211">作ったHTML5がうまく動作しない時どうするか?</a></li>
+						<li><a href="https://note.com/_nakashimmer_/n/nd04763808d55">開発者ツール:JavaScriptのお助けツール</a></li>
+						<li><a href="https://webtechpromo.org/">HTML5検定</a></li>
 					</ul>
-				</div>
-			</section>
-			<section>
-				<h2>参考URL</h2>
-				<ul>
-					<li><a href="https://youtu.be/k4-qKDWe67I">TeraPad</a></li>
-					<li><a
-							href="https://www.cyber-u.ac.jp/cu_annex/teachercolumn/tccm_tec/html-for-beginners.html">初学者のためのHTML5</a>
-					</li>
-					<li><a href="https://note.com/_nakashimmer_/n/ncb49a09c8211">作ったHTML5がうまく動作しない時どうするか?</a></li>
-					<li><a href="https://note.com/_nakashimmer_/n/nd04763808d55">開発者ツール:JavaScriptのお助けツール</a></li>
-					<li><a href="https://webtechpromo.org/">HTML5検定</a></li>
-				</ul>
-			</section>
-		</main>
+				</section>
+			</main>
+		</div>
 		<footer>
 			<p><small>(C) Shunji Nakashima</small></p>
 		</footer>

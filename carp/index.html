@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鯉のぼりと放送大学</title>
+		<style>
+			body {
+				background-color: rgba(0, 0, 250, 0.8);
+			}
+
+			#univ {
+				position: absolute;
+				width: 100%;
+				height: 100vh;
+				top: 0px;
+				right: 0px;
+				bottom: 0px;
+				left: 0px;
+				margin: auto;
+				transform-style: preserve-3d;
+				perspective: 805px;
+				background-image: url(bgi.png);
+				background-size: 100% 100%;
+			}
+
+			#carp {
+				width: 300px;
+				height: 100px;
+				font-size: 80px;
+				line-height: 100px;
+				text-align: center;
+				animation: carpFrame 5s ease-in-out 0s infinite normal;
+				transform-origin: 100px 0px 0px;
+				position: absolute;
+				left: 20%;top: 35%;
+				transform-style: preserve-3d;
+				perspective: 805px;
+			}
+
+			@keyframes carpFrame {
+				0% {
+					transform: rotateX(20deg) rotateY(90deg) translateZ(100px)
+				}
+
+				100% {
+					transform: rotateX(20deg) rotateY(-270deg) translateZ(100px);
+				}
+			}
+
+			#carpHead {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				animation: carpHeadframe 1s ease-in-out 0s infinite normal;
+				transform-origin: right;
+			}
+
+			@keyframes carpHeadframe {
+				0% {
+					transform: rotateY(0deg);
+				}
+
+				50% {
+					transform: rotateY(-30deg);
+				}
+			}
+
+			#carpBody {
+				position: absolute;
+				width: 150px;
+				height: 100px;
+				background-color: red;
+				transform: translate(100px);
+			}
+
+			#carpTale {
+				position: absolute;
+				width: 50px;
+				height: 100px;
+				animation: carpTaleframe 0.5s ease-in-out 0s infinite normal;
+				background:
+					linear-gradient(120deg, red 45%, transparent 45%),
+					linear-gradient(60deg, red 45%, transparent 45%);
+				transform-origin: left;
+			}
+
+			@keyframes carpTaleframe {
+
+				0%,100%
+				{
+					transform: translate(250px) rotateY(-15deg);
+				}
+
+				50% {
+					transform: translate(250px) rotateY(30deg);
+				}
+			}
+
+			#eye {
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				background-color: black;
+				border: 10px solid white;
+				border-radius: 50%;
+				transform: translate(10px, 10px);
+			}
+
+			.scale {
+				position: absolute;
+				width: 20px;
+				height: 35px;
+				border: 10px solid white;
+				border-radius: 0 50px 50px 0;
+				border-left: none;
+				z-index: 0;
+			}
+
+			.scale:nth-of-type(1) {
+				transform: translate(0px, 0px);
+			}
+
+			.scale:nth-of-type(2) {
+				transform: translate(0px, 45px);
+			}
+
+			.scale:nth-of-type(3) {
+				transform: translate(40px, 22.5px);
+			}
+
+			.scale:nth-of-type(4) {
+				transform: translate(80px, 0px);
+			}
+
+			.scale:nth-of-type(5) {
+				transform: translate(80px, 45px);
+			}
+
+			.scale:nth-of-type(6) {
+				transform: translate(120px, 22.5px);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="univ">
+			<div id="carp">
+				<div id=carpHead>
+					<div id=eye></div>
+				</div>
+				<div id=carpBody>
+					<div class=scale></div>
+					<div class=scale></div>
+					<div class=scale></div>
+					<div class=scale></div>
+					<div class=scale></div>
+					<div class=scale></div>
+				</div>
+				<div id=carpTale>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

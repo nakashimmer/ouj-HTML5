@@ -4,22 +4,25 @@
 		<meta charset="utf-8">
 		<title>鯉のぼりと放送大学</title>
 		<style>
+			*{margin:0;padding:0;font-size:16px;}
 			body {
 				background-color: rgba(0, 0, 250, 0.8);
 			}
 
-			h1{
-				color:white;
-				text-align: right;
-			}
-			footer{
+			header{
 				position: absolute;
-				bottom:0px;
-				right:0px;
-				color:white;
+				top:0;right:0;
+				color: white;}
+			header h1{
+				font-size:2em;
 			}
 
-	
+			footer {
+				position: absolute;
+				bottom: 0px;
+				right: 0px;
+				color: white;
+			}
 
 			#univ {
 				position: absolute;
@@ -45,7 +48,8 @@
 				animation: carpFrame 5s ease-in-out 0s infinite normal;
 				transform-origin: 100px 0px 0px;
 				position: absolute;
-				left: 20%;top: 35%;
+				left: 20%;
+				top: 35%;
 				transform-style: preserve-3d;
 				perspective: 805px;
 			}
@@ -100,8 +104,8 @@
 
 			@keyframes carpTaleframe {
 
-				0%,100%
-				{
+				0%,
+				100% {
 					transform: translate(250px) rotateY(-15deg);
 				}
 
@@ -157,7 +161,9 @@
 	</head>
 	<body>
 		<div id="univ">
-			<h1>放送大学と鯉のぼり</h1>
+			<header>
+				<h1>放送大学と鯉のぼり</h1>
+			</header>
 			<div id="carp">
 				<div id=carpHead>
 					<div id=eye></div>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1">
+		<title>Document</title>
+		<style>
+			body {
+				background-color: black;
+				text-align: center;
+			}
+
+			canvas {
+				margin: 30px auto;
+				border-radius: 10px;
+				-webkit-box-reflect: below 0px -webkit-gradient(linear, left bottom, left top, from(white), color-stop(0.5, transparent), to(transparent));
+			}
+		</style>
+	</head>
+	<body>
+		<link href='http://fonts.googleapis.com/css?family=Griffy'
+			rel='stylesheet'>
+		<canvas id='obake'
+			width=800
+			height=500
+			onclick="sound()"> canvas対応のブラウザで御覧ください </canvas>
+		<script>
+			// forked from nakashimmer's "放送大学の隠れキャラ「obake」を描いてみた" http://jsdo.it/nakashimmer/hue2
+			// forked from nakashimmer's "オバケ" http://jsdo.it/nakashimmer/hue2
+			var canvas = document.getElementById('obake');
+			var c = canvas.getContext('2d');
+			var pi = Math.PI;
+			c.lineJoin = "round";
+
+			var voice = new Audio();
+			voice.src = 'http://springreen.jp/INDEX/themes/ShunsuiKobo/bg/halloween.wav';
+
+
+			setInterval(anime, 50);
+			var frame = 0;
+			var obake = { x: 300, y: 200, dx: -1 };
+			var wink = 0;
+
+			var g = c.createLinearGradient(0, 0, 0, 500);
+			g.addColorStop(0, "purple");
+			g.addColorStop(0.5, "purple");
+			g.addColorStop(1, "black");
+
+
+
+			c.lineWidth = 3;
+
+			function anime() {
+				frame++;
+
+				obake.x += obake.dx;
+				if (obake.x < 100 || obake.x > 700) { obake.dx *= (-1); wink = 1; }
+				obake.y = 400 - Math.abs(Math.sin(frame / 180 * Math.PI) * 270);
+
+				obakeDraw(obake.x, obake.y);
+			}
+			function obakeDraw(x, y) {
+				clr();
+
+				c.fillStyle = 'red';
+				c.font = '100px "Griffy"';
+				c.fillText('TRICK', 200, 150);
+
+				c.fillStyle = 'white';
+				c.font = '100px "Griffy"';
+				c.fillText('OR', 400, 300);
+
+				c.fillStyle = 'red';
+				c.font = '100px "Griffy"';
+				c.fillText('TREAT?', 350, 450);
+
+				//   body(obake.x+90+20,obake.y+90+25,"#999");
+				//    te(obake.x-50+20,obake.y+60+25,"#999");
+
+				//    c.globalAlpha=1-Math.sin(frame/180*Math.PI);
+
+				body(obake.x + 90, obake.y + 90, "orange");
+
+				if (Math.random() * 10 < 9.9) { wink = 0; } else { wink = 1; }
+				if (obake.y >= 398 || obake.x < 100 || obake.x > 690) wink = 1;
+				me(obake.x - 50, obake.y - 30);
+				me(obake.x, obake.y - 30);
+
+				kuchi(obake.x - 60, obake.y + 10);
+				te(obake.x + 20, obake.y + 60, "orange");
+				te(obake.x - 50, obake.y + 60, "orange");
+
+				c.globalAlpha = 1;
+			}
+
+			function clr() {
+				c.fillStyle = g;
+				//    c.globalAlpha=0.6;
+				c.fillRect(0, 0, 800, 500);
+				c.globalAlpha = 1;
+				c.fillStyle = "#666";
+			}
+
+			function body(x, y, color) {
+				//羽
+				c.beginPath();
+				c.arc(x - 170, y - 160 + Math.sin(frame / 2 * pi) * 5, 60, 0 * pi, 1 * pi, false);
+				c.arc(x - 210, y - 100 + Math.sin(frame / 2 * pi) * 5, 50, 1.3 * pi, 0.7 * pi, true);
+				c.arc(x - 220, y - 60 + Math.sin(frame / 2 * pi) * 5, 20, 1 * pi, 1.8 * pi, false);
+				c.closePath();
+				c.fillStyle = "black";
+				c.fill();
+				c.stroke();
+
+				c.beginPath();
+				c.arc(x - 10, y - 140 + Math.sin(frame / 2 * pi) * 5, 60, 1 * pi, 0 * pi, true);
+				c.arc(x + 30, y - 80 + Math.sin(frame / 2 * pi) * 5, 50, 1.7 * pi, 0.3 * pi, false);
+				c.arc(x + 40, y - 40 + Math.sin(frame / 2 * pi) * 5, 20, 1.8 * pi, 1 * pi, true);
+				c.closePath();
+				c.fillStyle = "black";
+				c.fill();
+				c.stroke();
+
+
+
+				//face  
+				c.beginPath();
+				c.moveTo(x, y);
+				c.quadraticCurveTo(x - 40, y + 20, x - 110, y);
+				c.arc(x - 90, y - 100, 100, 0.6 * pi, 0.3 * pi, false);
+				c.quadraticCurveTo(x - 60, y, x, y);
+				c.closePath();
+				c.fillStyle = color;
+				c.fill();
+				c.stroke();
+
+				//hat
+				c.save();
+				c.translate(x - 80, y - 170);
+				c.beginPath();
+				c.rotate(20 / 180 * Math.PI);
+				c.scale(1, 0.2);
+				c.arc(0, 0, 130, 1.75 * pi, 1.3 * pi, false);
+				c.lineTo(50, -1000);
+				c.closePath();
+				c.fillStyle = "black";
+				c.fill();
+				c.restore();
+				c.stroke();
+
+			}
+
+			function kuchi(x, y) {
+				c.beginPath();
+				c.moveTo(x, y);
+				c.quadraticCurveTo(x + 30, y + 70, x + 70, y);
+				c.quadraticCurveTo(x + 30, y + 10, x, y);
+				c.closePath();
+
+				c.fillStyle = "black";
+				c.fill();
+				c.stroke();
+
+				c.beginPath();
+				c.moveTo(x + 3, y);
+				c.lineTo(x + 6, y + 10);
+				c.lineTo(x + 14, y + 3);
+				c.closePath();
+				c.fillStyle = "white";
+				c.fill();
+
+				c.beginPath();
+				c.moveTo(x + 55, y + 3);
+				c.lineTo(x + 60, y + 13);
+				c.lineTo(x + 68, y);
+				c.closePath();
+				c.fillStyle = "white";
+				c.fill();
+			}
+
+			function me(x, y) {
+				c.beginPath();
+				c.fillStyle = "black";
+				if (wink === 0) {
+					c.arc(x, y, 10, 0, 2 * pi, false);
+					c.fill();
+				} else {
+					c.fillRect(x - 5, y + 5, 10, 2);
+				}
+			}
+
+			function te(x, y, color) {
+				c.beginPath();
+				c.moveTo(x, y);
+				c.lineTo(x - 30, y);
+				c.arc(x - 30, y + 10, 10, 1.5 * pi, pi, true);
+				c.lineTo(x - 40, y + 30);
+				c.arc(x - 35, y + 30, 5, pi, 2 * pi, true);
+				c.lineTo(x - 30, y + 15);
+				c.arc(x - 25, y + 25, 5, pi, 2 * pi, true);
+				c.lineTo(x - 20, y + 15);
+				c.arc(x - 15, y + 20, 5, pi, 2 * pi, true);
+				c.lineTo(x - 10, y + 10);
+				c.lineTo(x + 10, y + 10);
+				c.fillStyle = color;
+				c.fill();
+				c.strokeStyle = "black";
+				c.lineWidth = 3;
+				c.stroke();
+			}
+
+			function sound() { voice.play(); }
+
+		</script>
+	</body>
+</html>

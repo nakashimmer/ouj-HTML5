@@ -45,12 +45,13 @@
 				margin: 2em;
 			}
 
-			h2{
+			h2 {
 				font-size: 1.5em;
 				background-color: #222;
 				text-indent: 0.4em;
 				margin: 0.2em 0;
 			}
+
 			/*横並べ*/
 			.flex {
 				display: flex;
@@ -102,10 +103,10 @@
 			}
 
 			/*dino表示*/
-			input{
-				text-align:center;
-				width:calc(100% - 10px);
-				margin:5px;
+			input {
+				text-align: center;
+				width: calc(100% - 10px);
+				margin: 5px;
 				border-radius: 10px;
 			}
 
@@ -129,6 +130,15 @@
 				content: counter(number) ".  ";
 			}
 
+			h3>ul {
+				margin-left: 1em;
+			}
+
+			h3+ul>li:before {
+				margin-left: 1em;
+				content: "○ ";
+			}
+
 			/*レスポンシブ対応*/
 			@media(max-width:1000px) {
 
@@ -148,8 +158,6 @@
 					border-top: none;
 					border-bottom: none;
 				}
-
-
 			}
 		</style>
 	</head>
@@ -161,81 +169,116 @@
 			<main>
 				<section>
 					<h2>受講に際してのお願い</h2>
-					<p>本科目は、コーディングを行いながら制作する演習の時間が多いです。演習中、漫然とコードを書くだけではなく、本科目で学んだことを元に、「<mark>自分だったら、どんなWebページ・サービス・アプリを作ろうか？</mark>」と想いを巡らせながら、演習を行ってください。</p>
+					<p>
+						本科目は、コーディングを行いながら制作する演習の時間が多いです。演習中、漫然とコードを書くだけではなく、本科目で学んだことを元に、「<mark>自分だったら、どんなWebページ・サービス・アプリを作ろうか？</mark>」と想いを巡らせながら、演習を行ってください。
+					</p>
 				</section>
 				<section>
 					<h2>修正</h2>
 					<ul>
 						<li>27p text-decoration：(誤):text-through → (正):line-through</li>
-							</ul>
-						</li>
+					</ul>
+					</li>
 					</ul>
 				</section>
 				<section>
 					<h2>演習用ファイル</h2>
 					<ul>
 						<li>演習用ファイル：<a
-								href="https://github.com/nakashimmer/oujHTML5/archive/master.zip">ここをクリック</a>。PCのデスクトップにダウンロードして展開(解凍)<!-- 注意：万一、ファイル名が文字化けしたときは、ファイルを選択して右クリック→このプログラムで開く→エクスプローラを選択してください--></li>
-						<li>テキストエディタ：本学ではTeraPadがインストールされていると想いますが、<a href="https://vscode.dev/">Visual Studio Code</a>(オンライン版) が使えそうでしたら、それを使用しますので、すみませんがテストのご協力お願いします</li>
-						<li><a target="_blank" href="https://renshukun.azurewebsites.net/ClassForum/index.php">交流広場</a>：授業中の交流掲示板です。公序良俗に沿った範囲でご利用ください。パスワードは「obake2022」</li>
+								href="https://github.com/nakashimmer/oujHTML5/archive/master.zip">ここをクリック</a>。PCのデスクトップにダウンロードして展開(解凍)
+							<!-- 注意：万一、ファイル名が文字化けしたときは、ファイルを選択して右クリック→このプログラムで開く→エクスプローラを選択してください-->
+						</li>
+						<li>テキストエディタ：本学ではTeraPadがインストールされていると想いますが、<a target="_blank" href="https://vscode.dev/">Visual Studio
+								Code</a>(オンライン版) が使えそうでしたら、それを使用しますので、すみませんがテストのご協力お願いします</li>
+						<li><a target="_blank"
+								href="https://renshukun.azurewebsites.net/ClassForum/index.php">交流広場</a>：授業中の交流掲示板です。公序良俗に沿った範囲でご利用ください。パスワードは「obake2022」
+						</li>
 					</ul>
 				</section>
 				<section>
 					<h2>HTML5サンプル</h2>
 					<div class="flex">
 						<ul>
-							<li><a href="https://momdo.github.io/html/introduction.html#is-this-html5?">これはHTML5か</a></li>
-							<li><a href="https://twitter.com/Mommason15/status/1384424061015560193">Developers do you agree??</a></li>
+							<li><a target="_blank" href="https://momdo.github.io/html/introduction.html#is-this-html5?">これはHTML5か</a>
+							</li>
+							<li><a target="_blank" href="https://twitter.com/Mommason15/status/1384424061015560193">Developers do you
+									agree??</a></li>
 							<li>URL欄に以下をコピペ<br><input value="chrome://dino"></li>
-							<li><a href="https://www.google.com/doodles/roswells-66th-anniversary">Google ロゴ</a></li>
-							<li><a href="http://info.cern.ch/hypertext/WWW/TheProject.html">世界で最初のHP</a></li>
-							<li><a href="https://www.ouj.ac.jp/">普通のサイト(放送大学)</a></li>
-							<li><a href="https://eco-island.jp/">動画のサイト(宮古島)</a></li>
-							<li><a href="https://prinzhorn.github.io/skrollr/">パララックス（視差効果）</a></li>
+							<li><a target="_blank" href="https://www.google.com/doodles/roswells-66th-anniversary">Google ロゴ</a></li>
+							<li><a target="_blank" href="http://info.cern.ch/hypertext/WWW/TheProject.html">世界で最初のHP</a></li>
+							<li><a target="_blank" href="https://www.ouj.ac.jp/">普通のサイト(放送大学)</a></li>
+							<li><a target="_blank" href="https://eco-island.jp/">動画のサイト(宮古島)</a></li>
+							<li><a target="_blank" href="https://prinzhorn.github.io/skrollr/">パララックス（視差効果）</a></li>
 						</ul>
 						<ul>
-							<li><a href="https://nakashimmer.github.io/teacherColumn2021/cssSim/index.html">CSSシミュレーション</a></li>
-							<li><a href="https://nakashimmer.github.io/showcase/css3/animation/carousel/index.html">移動アニメーション</a></li>
-							<li><a href="https://nakashimmer.github.io/showcase/css3/animation/spinner/index.html">回転アニメーション</a></li>
-							<li><a href="https://nakashimmer.github.io/showcase/css3/animation/sakkaku/index.html">心理学　錯視</a></li>
-							<li><a href="https://nakashimmer.github.io/showcase/css3/animation/3d/cube/index.html">3次元</a></li>
-							<li><a href="https://nakashimmer.github.io/ouj-HTML5/carp/index.html">鯉のぼりと放送大学</a></li>
+							<li><a target="_blank"
+									href="https://nakashimmer.github.io/teacherColumn2021/cssSim/index.html">CSSシミュレーション</a></li>
+							<li><a target="_blank"
+									href="https://nakashimmer.github.io/showcase/css3/animation/carousel/index.html">移動アニメーション</a></li>
+							<li><a target="_blank"
+									href="https://nakashimmer.github.io/showcase/css3/animation/spinner/index.html">回転アニメーション</a></li>
+							<li><a target="_blank"
+									href="https://nakashimmer.github.io/showcase/css3/animation/sakkaku/index.html">心理学　錯視</a></li>
+							<li><a target="_blank"
+									href="https://nakashimmer.github.io/showcase/css3/animation/3d/cube/index.html">3次元</a></li>
+							<li><a target="_blank" href="https://nakashimmer.github.io/ouj-HTML5/carp/index.html">鯉のぼりと放送大学</a></li>
 						</ul>
 						<ul>
-							<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/kesan/index.html">計算</a>
+							<li><a target="_blank" href="https://nakashimmer.github.io/showcase/JS/calculate/kesan/index.html">計算</a>
 							</li>
-							<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/bmi/index.html">BMI</a>
+							<li><a target="_blank" href="https://nakashimmer.github.io/showcase/JS/calculate/bmi/index.html">BMI</a>
 							</li>
-							<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/uranai/index.html">占い</a>
+							<li><a target="_blank" href="https://nakashimmer.github.io/showcase/JS/calculate/uranai/index.html">占い</a>
 							</li>
-							<li><a href="https://nakashimmer.github.io/showcase/JS/calculate/janken/index.html">じゃんけん • ゲーム</a></li>
-							<li><a href="https://nakashimmer.github.io/showcase/JS/dom/css/index3.html">CSSをコントロール</a>
+							<li><a target="_blank" href="https://nakashimmer.github.io/showcase/JS/calculate/janken/index.html">じゃんけん
+									• ゲーム</a></li>
+							<li><a target="_blank" href="https://nakashimmer.github.io/showcase/JS/dom/css/index3.html">CSSをコントロール</a>
 							</li>
-							<li><a href="https://nakashimmer.github.io/showcase/JS/deviceAccess/gps/index.html">GPS</a>
+							<li><a target="_blank"
+									href="https://nakashimmer.github.io/showcase/JS/deviceAccess/gps/index.html">GPS</a>
 							</li>
 							<li><a
 									href="https://nakashimmer.github.io/showcase/JS/deviceAccess/speechSynthesis/recognition/index.html">音声認識</a>
 							</li>
-							<li><a href="https://nakashimmer.github.io/showcase/JS/3dGraphicsEffects/canvas/physics/fractal/index.html">フラクタル</a>
+							<li><a target="_blank"
+									href="https://nakashimmer.github.io/showcase/JS/3dGraphicsEffects/canvas/physics/fractal/index.html">フラクタル</a>
 							</li>
 						</ul>
 					</div>
 				</section>
 				<section>
 					<h2>参考URL</h2>
+					<h3>テキストエディタ</h3>
 					<ul>
-						<li><a href="https://note.com/_nakashimmer_/n/n8a5563d15fea">Visual Studio Codeの扱い方</a></li>
+						<li><a target="_blank" href="https://note.com/_nakashimmer_/n/n8a5563d15fea">Visual Studio Codeの扱い方</a>(中島)
+						</li>
+					</ul>
+					<h3>HTML5</h3>
+					<ul>
 						<li><a
 								href="https://www.cyber-u.ac.jp/cu_annex/teachercolumn/tccm_tec/html-for-beginners.html">初学者のためのHTML5</a>(サイバー大学)
 						</li>
-						<li><a href="https://www.youtube.com/watch?v=iKtDe36t94o">2019年度第2回ITビジネスセミナー</a>(サイバー大学)：<a
+						<li><a target="_blank" href="https://www.youtube.com/watch?v=iKtDe36t94o">2019年度第2回ITビジネスセミナー</a>(サイバー大学)：<a
 								href="https://www.youtube.com/watch?v=Fz0Pw1ruiqU&t=2312s">フル動画</a>
 						</li>
-						<li><a href="https://note.com/_nakashimmer_/n/ncb49a09c8211">作ったHTML5がうまく動作しない時どうするか?</a></li>
-						<li><a href="https://validator.w3.org/nu/#textarea">Html Checker</a></li>
-						<li><a href="https://note.com/_nakashimmer_/n/nd04763808d55">開発者ツール:JavaScriptのお助けツール</a></li>
-						<li><a href="https://webtechpromo.org/">HTML5検定</a>(Web技術振興協会)</li>
-		
+					</ul>
+					<h3>トラブルシューティング</h3>
+					<ul>
+						<li><a target="_blank"
+								href="https://note.com/_nakashimmer_/n/ncb49a09c8211">作ったHTML5がうまく動作しない時どうするか?</a>(中島)</li>
+						<li><a target="_blank"
+								href="https://note.com/_nakashimmer_/n/nd04763808d55">開発者ツール:JavaScriptのお助けツール</a>(中島)</li>
+					</ul>
+					<h3>仕様書</h3>
+					<ul>
+						<li><a target="_blank" href="https://developer.mozilla.org/ja/docs/Web">Mozilla Developer Network</a></li>
+						<li><a target="_blank" href="https://momdo.github.io/html/">living HTML standard</a>(WHATWG)</li>
+						<li><a target="_blank" href="https://www.w3.org/Style/CSS/#translations">CSS home page</a>(W3C)</li>
+						<li><a target="_blank" href="https://262.ecma-international.org/11.0/">ECMAScript(JavaScript)</a>(ECMA)</li>
+					</ul>
+					<h3>試験</h3>
+					<ul>
+						<li><a target="_blank" href="https://webtechpromo.org/">HTML5検定</a>(Web技術振興協会)</li>
 					</ul>
 				</section>
 			</main>
